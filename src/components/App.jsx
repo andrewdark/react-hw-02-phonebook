@@ -1,21 +1,19 @@
 import React, {Component} from "react";
-class App extends Component {
+import {nanoid} from "nanoid";
 
- render(){
-   return (
-     <div
-       style={{
-         height: '100vh',
-         display: 'flex',
-         justifyContent: 'center',
-         alignItems: 'center',
-         fontSize: 40,
-         color: '#010101'
-       }}
-     >
-       React homework template
-     </div>
-   );
- }
+class App extends Component {
+  state = {
+    contacts: [],
+    filter: [],
+  };
+
+  render() {
+    return (
+      <div id={nanoid()}>
+        React homework template
+      </div>
+    );
+  }
 }
+
 export default App;
