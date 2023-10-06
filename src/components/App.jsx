@@ -30,7 +30,7 @@ class App extends Component {
     const contacts = this.state.contacts;
     return contacts.filter(el => {
       const curName = el.name;
-      let temp = curName.substr(0, filter.length);
+      let temp = curName.slice(0, filter.length);
       return filter.toLowerCase() === temp.toLowerCase();
     });
   };
