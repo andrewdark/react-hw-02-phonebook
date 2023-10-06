@@ -37,6 +37,14 @@ class App extends Component {
     });
   };
 
+  deleteContact = event => {
+    const id = event.currentTarget.id;
+    const contacts = this.state.contacts.filter(elem => elem.id !== id);
+    this.setState({
+      contacts: contacts,
+    });
+  };
+
   render() {
     return (
       <div style={{
@@ -48,6 +56,7 @@ class App extends Component {
         <h2>Contacts</h2>
         <ContactList
           contacts={this.findContact()}
+          handleDelete={this.deleteContact}
         />
       </div>
     );
