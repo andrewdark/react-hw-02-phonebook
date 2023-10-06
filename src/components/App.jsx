@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {nanoid} from "nanoid";
+import ContactForm from "./ContactForm/ContactForm";
 
 class App extends Component {
   state = {
@@ -37,8 +38,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        React homework template
+      <div style={{
+        width: 400,
+        marginLeft: '8px',
+      }}>
+        <h1>Phonebook</h1>
+        <ContactForm addContact={this.addContact} />
+        <h2>Contacts</h2>
       </div>
     );
   }
