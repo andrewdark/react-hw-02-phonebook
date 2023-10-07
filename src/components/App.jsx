@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {nanoid} from "nanoid";
 import ContactForm from "./ContactForm/ContactForm";
 import {ContactList} from "./ContactList/ContactList";
+import ContactFilter from "./ContactFilter/ContactFilter";
 
 class App extends Component {
   state = {
@@ -24,9 +25,16 @@ class App extends Component {
     };
 
     contacts.push(newContact);
-    this.setState({ contacts: contacts });
+    this.setState({contacts: contacts});
   };
 
+  setFilter = event => {
+    const name = event.currentTarget.value;
+    this.setState({
+      filter: name.toLowerCase(),
+    });
+  };
+  
   findContact = () => {
     const filter = this.state.filter;
     const contacts = this.state.contacts;
@@ -52,8 +60,9 @@ class App extends Component {
         marginLeft: '8px',
       }}>
         <h1>Phonebook</h1>
-        <ContactForm addContact={this.addContact} />
+        <ContactForm addContact={this.addContact}/>
         <h2>Contacts</h2>
+        <ContactFilter handleFiltering={this.setFilter}/>
         <ContactList
           contacts={this.findContact()}
           handleDelete={this.deleteContact}

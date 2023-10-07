@@ -1,5 +1,5 @@
 import css from './ContactFilter.module.css';
-export const ContactFilter = props => {
+const ContactFilter = props => {
   return (
     <div className={css.form}>
       <label htmlFor="filter">Find contacts by name</label>
@@ -15,3 +15,5 @@ export const ContactFilter = props => {
     </div>
   );
 };
+
+export default ContactFilter;
