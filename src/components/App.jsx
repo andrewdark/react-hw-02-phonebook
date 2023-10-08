@@ -3,6 +3,7 @@ import {nanoid} from "nanoid";
 import ContactForm from "./ContactForm/ContactForm";
 import {ContactList} from "./ContactList/ContactList";
 import ContactFilter from "./ContactFilter/ContactFilter";
+import localStorage from '../services/storage';
 
 class App extends Component {
   state = {
@@ -52,6 +53,16 @@ class App extends Component {
       contacts: contacts,
     });
   };
+
+  componentDidMount() {
+    this.setState({
+      contacts: localStorage.load('phoneBook'),
+    });
+  }
+  
+  componentDidUpdate() {
+    localStorage.save('phoneBook', this.state.contacts);
+  }
 
   render() {
     return (
