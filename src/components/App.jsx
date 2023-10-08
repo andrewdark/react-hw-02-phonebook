@@ -59,8 +59,8 @@ class App extends Component {
       contacts: localStorage.load('phoneBook'),
     });
   }
-  
-  componentDidUpdate() {
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
     localStorage.save('phoneBook', this.state.contacts);
   }
 
