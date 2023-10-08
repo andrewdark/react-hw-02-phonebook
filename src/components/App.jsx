@@ -34,7 +34,7 @@ class App extends Component {
       filter: name.toLowerCase(),
     });
   };
-  
+
   findContact = () => {
     const filter = this.state.filter;
     const contacts = this.state.contacts;
