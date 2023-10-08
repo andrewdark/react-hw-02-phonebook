@@ -55,9 +55,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.setState({
-      contacts: localStorage.load('phoneBook'),
-    });
+    const contacts = localStorage.load('phoneBook');
+    if (contacts) {
+      this.setState({
+        contacts,
+      });
+    }
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
