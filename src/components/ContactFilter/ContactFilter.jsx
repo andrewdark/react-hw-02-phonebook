@@ -9,7 +9,7 @@ const ContactFilter = props => {
         className={css.inp}
         type="text"
         name="filter"
-        onChange={props.handleFiltering}
+        onChange={event=>{props.handleFiltering(event.target.value)}}
         required
       />
     </div>

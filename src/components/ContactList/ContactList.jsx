@@ -10,7 +10,7 @@ export const ContactList = props => {
             </span>
             <button
               id={elem.id}
-              onClick={props.handleDelete}
+              onClick={()=>{props.handleDelete(elem.id)}}
               className={css.btn}
             >
               Delete

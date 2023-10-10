@@ -29,8 +29,7 @@ class App extends Component {
     this.setState({contacts: contacts});
   };
 
-  setFilter = event => {
-    const name = event.currentTarget.value;
+  setFilter = name => {
     this.setState({
       filter: name.toLowerCase(),
     });
@@ -46,8 +45,7 @@ class App extends Component {
     });
   };
 
-  deleteContact = event => {
-    const id = event.currentTarget.id;
+  deleteContact = id => {
     const contacts = this.state.contacts.filter(elem => elem.id !== id);
     this.setState({
       contacts: contacts,
